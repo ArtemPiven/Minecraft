@@ -9,4 +9,4 @@ class Game(ShowBase):
         self.hero = Hero((x//2, y//2, 2),self.land)
         base.camLens.setFov(90)
 game = Game()  
-game.run() 
+game.run()

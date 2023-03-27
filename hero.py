@@ -115,21 +115,21 @@ class Hero():
         base.accept('mouse3', self.destroy)
         base.accept('1', self.soil)
         base.accept('2', self.stone)
-        base.accept('3', self.leaf)
-        base.accept('4', self.oak)
+        base.accept('3', self.lava)
+        base.accept('4', self.sand)
         base.accept('arrow_up', self.turn_up)
         base.accept('arrow_up' + '-repeat', self.turn_up)
         base.accept('arrow_down', self.turn_down)
         base.accept('arrow_down' + '-repeat', self.turn_down)
 
     def stone(self):
-        self.land.texture = 'Stone.png'
+        self.land.texture = 'stone.png'
     def soil(self):
         self.land.texture = 'soil.jpg'
-    def leaf(self):
-        self.land.texture = 'Azalea.png'
-    def oak(self):
-        self.land.texture = 'Oak_Log.png'
+    def lava(self):
+        self.land.texture = 'lava.jpeg'
+    def sand(self):
+        self.land.texture = 'sand.png'
 
     def turn_up(self):
         self.hero.setP((self.hero.getP() - 5) % 360)

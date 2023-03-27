@@ -2,7 +2,7 @@ import pickle
 class Mapmanager():
     def __init__(self):
         self.model = 'block.egg'
-        self.texture = 'soil.jpg'  
+        self.texture = 'stone.png'  
         self.startNew()
         self.addBlock((0,10, 0))
     def delBlock(self, position):
@@ -18,6 +18,12 @@ class Mapmanager():
 
     def addBlock(self, position):
         self.block = loader.loadModel(self.model)
+        if position[2] == 0:
+            self.texture = 'soil.jpg'
+        elif  position[2] < 4:
+            self.texture = 'stone.png'
+        else:
+            self.texture = 'lava.jpeg'
         self.block.setTexture(loader.loadTexture(self.texture))
         self.block.setPos(position)
         self.block.reparentTo(self.land)
